@@ -11,10 +11,9 @@ using namespace std;
 using namespace std::chrono_literals;
 int contadorCiclo=0;
 
-int sonido30Minutos(){
+void sonido30Minutos(){
     system("notificaciones.py");
     PlaySound(TEXT("alarma.wav"), NULL, SND_SYNC);
-    return 0;
 }
 
 /* int continuar(){
@@ -35,7 +34,9 @@ int iniciar(int status){ // * 0 = "Inicia o confirmó continuar" y si es 1 = "Co
         cout<<"Por favor, no cierres la consola." << endl;
         std::this_thread::sleep_for(std::chrono::seconds(10));
         contadorCiclo +=1;
-        sonido30Minutos();
+
+        std::thread notif(sonido30Minutos);
+        notif.detach();
         if (contadorCiclo != 4){
             iniciar(1);
         } else {
@@ -78,6 +79,36 @@ int iniciar(int status){ // * 0 = "Inicia o confirmó continuar" y si es 1 = "Co
     }
 }
 
+void debug(){
+    int opcionDebug;
+    cout << endl;
+    cout << "Modo de desarrollador: Roberto:)" << endl;
+    cout << "Forzar notificacion : 1 " << endl;
+    cout << "Forzar iniciar / continuar : 2" << endl;
+    cout << "Forzar continuar : 3" << endl;
+    cout << "Forzar 2 horas : 4" << endl;
+    cout << "Establecer numero de ciclos: 5" << endl;
+    cin >> opcionDebug;
+    if (opcionDebug == 1){
+        sonido30Minutos();
+        debug();
+    } else if (opcionDebug == 2){
+        iniciar(0);
+    } else if (opcionDebug == 3){
+        iniciar(1);
+    } else if (opcionDebug == 4){
+        iniciar(2);
+    } else if (opcionDebug == 5){
+        int valorNuevo;
+        cout << "Nuevo valor: ";
+        cin >> valorNuevo;
+        contadorCiclo = valorNuevo;
+    } else {
+        cout << "Opcion incorrecta..." << endl;
+        debug();
+    }
+}
+
 int main() {
 	char n, valorContinuar;
 	cout << "Bienvenido a la alarma eyeHealth." << endl;
@@ -90,6 +121,8 @@ int main() {
     } else if (n == 'N' || n == 'n') {
         cout << "Hasta pronto.";
         std::this_thread::sleep_for(std::chrono::seconds(2));
+    } else if (n == 'd'){
+        debug();
     }
 	
 	return 0;
