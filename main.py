@@ -1,14 +1,17 @@
 import os
 import time
-from playsound import playsound
+import pygame
 import notificaciones
 
-alarmaPath = os.path.realpath('alarma.wav')
+alarmaPath = os.path.realpath('alarma.mp3')
 
-contadorCiclo : int = 0 
+contadorCiclo : int = 0
+tiempo : int = 1800 
+pygame.init()
 
 def sonido():
-    playsound(str(alarmaPath), False)
+    pygame.mixer.music.load('alarma.mp3')
+    pygame.mixer.music.play()
 
 def cerrar():
     print("Hasta pronto!")
@@ -47,10 +50,40 @@ def iniciarTiempo():
     global contadorCiclo
     print("\nEl tiempo empezó a contar. (30 minutos)")
     print("Por favor, no cierres la consola.")
-    time.sleep(10) # Tiempo de espera de contador
+    time.sleep(int(tiempo)) # Tiempo de espera de contador
     contadorCiclo += 1
     aviso()
     
+def debug():
+    global tiempo
+    print("")
+    print("Modo de desarrollador: Roberto:")
+    print("Forzar notificacion : 1")
+    print("Forzar iniciar / continuar : 2")
+    print("Forzar continuar : 3")
+    print("Forzar 2 horas : 4")
+    print("Establecer numero de ciclos: 5")
+    print("Establecer tiempo personalizado: 6")
+    opcionDebug = input("Opcion: ")
+    if int(opcionDebug) == 1:
+        notificaciones.notificar()
+        debug();
+    elif int(opcionDebug) == 2:
+        iniciar(0);
+    elif int(opcionDebug) == 3:
+        iniciar(1);
+    elif int(opcionDebug) == 4:
+        iniciar(2);
+    elif int(opcionDebug) == 5:
+        valorNuevo = input("Nuevo valor: ")
+        contadorCiclo = valorNuevo;
+    elif int(opcionDebug) == 6:
+        tiempo = input("Coloca el nuevo tiempo (en s): ")
+        iniciarTiempo()
+    else:
+        print("Opcion incorrecta...")
+        debug();
+         
 def main():
     def preguntar():
         
@@ -59,6 +92,8 @@ def main():
             iniciarTiempo()
         elif valorContinuar.lower() == 'n':
             cerrar()
+        elif valorContinuar.lower() == 'debug':
+            debug()
         else:
             print("ERROR: Opción inválida.")
             preguntar()
