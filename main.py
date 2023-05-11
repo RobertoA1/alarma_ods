@@ -14,7 +14,7 @@ def sonido():
     pygame.mixer.music.play()
 
 def cerrar():
-    print("Hasta pronto!")
+    print("¡Hasta pronto!")
     time.sleep(2)
 
 def aviso():
@@ -23,7 +23,7 @@ def aviso():
     sonido()
     
     if contadorCiclo != 4:
-        print("\nHan pasado 30 minutos, debes descansar mínimo 5 minutos tus ojos. Distráete un rato.")
+        print("\nHan pasado 30 minutos, debes de descansar tus ojos como mínimo 5 minutos.")
         print("Te recomendamos alejarte de la pantalla, enfocar la vista en un objeto lejano y hacer ejercicios de estiramiento para el cuello y los hombros.")
         valorContinuar = input("¿Deseas continuar? (S/N): ")
         
@@ -32,10 +32,10 @@ def aviso():
         elif valorContinuar.lower() == 'n':
             cerrar()
         else:
-            print("Opcion invalida.")
+            print("Opción inválida")
             aviso()
     else:
-        print("\nHan pasado 2 horas, debes relajarte y dejar de ver la computadora al menos 15 minutos, para evitar problemas visuales a largo plazo.")
+        print("\nHan pasado 2 horas, debes de descansar tus ojos al menos 15 minutos, para evitar problemas visuales a largo plazo.")
         print("Te recomendamos alejarte de la pantalla, enfocar la vista en un objeto lejano y hacer ejercicios de estiramiento para el cuello y los hombros.")
         valorContinuar = input("¿Deseas continuar? (S/N): ")
         
@@ -45,7 +45,7 @@ def aviso():
         elif valorContinuar.lower() == 'n':
             cerrar()
         else:
-            print("Opcion invalida.")
+            print("Opción inválida")
             aviso()
 
 def iniciarTiempo():
@@ -66,7 +66,7 @@ def debug():
     print("Forzar 2 horas : 4")
     print("Establecer numero de ciclos: 5")
     print("Establecer tiempo personalizado: 6")
-    opcionDebug = input("Opcion: ")
+    opcionDebug = input("Opción: ")
     if int(opcionDebug) == 1:
         notificaciones.notificar()
         debug();
@@ -83,7 +83,7 @@ def debug():
         tiempo = input("Coloca el nuevo tiempo (en s): ")
         iniciarTiempo()
     else:
-        print("Opcion incorrecta...")
+        print("ERROR: Opción inválida.")
         debug();
          
 def main():
