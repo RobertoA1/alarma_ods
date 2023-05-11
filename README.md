@@ -9,6 +9,13 @@ EyeHealth Alarm es una aplicación de alarma diseñada para ayudar a los usuario
 
 La aplicación se puede descargar desde el repositorio de GitHub. Descarga la última versión y descomprime los archivos en una carpeta de tu elección.
 
+**Como empezar:**
+
+Paso 1: ' pip install playsound==1.2.2 '
+
+Paso 2: ' pip install plyer '
+
+Paso 3: Ejecuta el archivo main.py
 
 **Autores:**
 
@@ -21,10 +28,3 @@ La aplicación se puede descargar desde el repositorio de GitHub. Descarga la ú
 
 
 
-**Como empezar:**
-
-Paso 1: ' pip install playsound==1.2.2 '
-
-Paso 2: ' pip install plyer '
-
-Paso 3: Ejecuta el archivo main.py
