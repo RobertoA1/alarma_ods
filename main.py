@@ -24,6 +24,7 @@ def aviso():
     
     if contadorCiclo != 4:
         print("\nHan pasado 30 minutos, debes descansar mínimo 5 minutos tus ojos. Distráete un rato.")
+        print("Te recomendamos alejarte de la pantalla, enfocar la vista en un objeto lejano y hacer ejercicios de estiramiento para el cuello y los hombros.")
         valorContinuar = input("¿Deseas continuar? (S/N): ")
         
         if valorContinuar.lower() == 's':
@@ -35,6 +36,7 @@ def aviso():
             aviso()
     else:
         print("\nHan pasado 2 horas, debes relajarte y dejar de ver la computadora al menos 15 minutos, para evitar problemas visuales a largo plazo.")
+        print("Te recomendamos alejarte de la pantalla, enfocar la vista en un objeto lejano y hacer ejercicios de estiramiento para el cuello y los hombros.")
         valorContinuar = input("¿Deseas continuar? (S/N): ")
         
         if valorContinuar.lower() == 's':
