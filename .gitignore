@@ -1,3 +1,4 @@
 main.exe
 .vscode/
-.__pycache__/
+.build/
+.dist/
