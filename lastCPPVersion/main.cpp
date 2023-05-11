@@ -1,11 +1,10 @@
-#include <iostream>
-#include <windows.h>
-#include <mmsystem.h>
-#pragma comment(lib,"winmm.lib")
-#include <iostream>
-#include <cstdlib>
-#include <thread>
-#include <chrono>
+#include "lib/iostream"
+// #include <windows.h>
+// #include "lib/mmsystem.h"
+// #pragma comment(lib,"winmm.lib")
+#include "lib/cstdlib"
+#include "lib/thread"
+#include "lib/chrono"
 
 using namespace std;
 using namespace std::chrono_literals;
@@ -13,7 +12,7 @@ int contadorCiclo=0;
 
 void sonido30Minutos(){
     system("notificaciones.py");
-    PlaySound(TEXT("alarma.wav"), NULL, SND_SYNC);
+    /* PlaySound(TEXT("alarma.wav"), NULL, SND_SYNC); */
 }
 
 /* int continuar(){
@@ -109,7 +108,7 @@ void debug(){
     }
 }
 
-int main() {
+int WinMain() {
 	char n, valorContinuar;
 	cout << "Bienvenido a la alarma eyeHealth." << endl;
     cout << "Autores: De la Cruz J.W., Gomez A.F., Lucano D.A., Novoa B.J., Quezada R.E. & Velasquez T.J." << endl;
