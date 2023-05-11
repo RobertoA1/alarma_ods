@@ -19,3 +19,8 @@ La aplicación se puede descargar desde el repositorio de GitHub. Descarga la ú
 - Quezada R.E.
 - Velásquez T.J.
 
+**Como hacer build:**
+
+Paso 1: ['pip install playsound==1.2.2']
+Paso 2: ['pip install plyer']
+Paso 3: Ejecuta el archivo ['main.py']
