@@ -21,10 +21,10 @@ La aplicación se puede descargar desde el repositorio de GitHub. Descarga la ú
 
 
 
-**Como hacer build:**
+**Como empezar:**
 
-Paso 1: 'pip install playsound==1.2.2'
+Paso 1: ' pip install playsound==1.2.2 '
 
-Paso 2: 'pip install plyer'
+Paso 2: ' pip install plyer '
 
-Paso 3: Ejecuta el archivo ['main.py']
+Paso 3: Ejecuta el archivo main.py
