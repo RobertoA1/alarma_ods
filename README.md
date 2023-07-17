@@ -1,5 +1,5 @@
 
-**EyeHealth Alarm**
+**EyeHealth Alarm** (OBSOLETO, se ha transferido el proyecto a https://github.com/RobertoA1/eyeHealth)
 
 
 
